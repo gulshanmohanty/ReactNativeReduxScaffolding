@@ -1,18 +1,11 @@
 // createprofileaction interface start
-export interface ICreateProfileAction {
+export interface IIncreaseNumberAction {
   type: string;
-  payload: ICreateProfileActionPayload;
+  payload: number;
 }
-export interface ICreateProfileActionPayload {
-  payload: IProfileData;
-}
-export interface IProfileData {
-  email?: string;
-  name?: string;
-  mobile?: string;
-}
+
 export interface IProfileReducerState {
-  profileData?: IProfileData;
+  numberData?: number;
   loaders: {
     createProfile: boolean;
   };

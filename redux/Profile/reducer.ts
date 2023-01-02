@@ -2,7 +2,7 @@ import {profileActions} from './action';
 import {IProfileReducerState} from './interface';
 
 export const initialState = {
-  profileData: {},
+  numberData: 0,
   loaders: {
     createProfile: false,
   },
@@ -16,11 +16,21 @@ export const profileReducer = (
   action: {type: string; payload: any},
 ) => {
   switch (action.type) {
-    case profileActions.CREATE_PROFILE:
-      console.log(state.loaders.createProfile, 'loader state');
+    case profileActions.INCREASE_NUMBER:
+      // console.log(
+      //   state.loaders.createProfile,
+      //   'loader state',
+      //   action.payload,
+      //   '---',
+      //   state,
+      // );
       return {
         ...state,
-        loaders: {...state.loaders, createProfile: true},
+        numberData: action.payload,
+        loaders: {
+          ...state.loaders,
+          createProfile: !state.loaders.createProfile,
+        },
         errors: {...state.errors, createProfile: ''},
       };
     default:

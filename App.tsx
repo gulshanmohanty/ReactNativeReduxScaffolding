@@ -11,13 +11,11 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
-  StyleSheet,
-  Text,
   useColorScheme,
   View,
 } from 'react-native';
 import Increment from './components/Increment';
-import {styles} from './styles';
+// import {styles} from './styles';
 import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';

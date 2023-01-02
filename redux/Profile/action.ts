@@ -1,17 +1,16 @@
-import {ICreateProfileAction, ICreateProfileActionPayload} from './interface';
+import {IIncreaseNumberAction} from './interface';
 
 const prefix = 'profile/';
 
 export const profileActions = {
-  CREATE_PROFILE: `${prefix}CREATE_PROFILE`,
+  INCREASE_NUMBER: `${prefix}INCREASE_NUMBER`,
 };
 
-export const createProfileAction = (
-  profileData: ICreateProfileActionPayload,
-): ICreateProfileAction => {
-  console.log('actionCall');
+export const increaseNumberAction = (
+  numberData: number,
+): IIncreaseNumberAction => {
   return {
-    type: profileActions.CREATE_PROFILE,
-    payload: profileData,
+    type: profileActions.INCREASE_NUMBER,
+    payload: numberData,
   };
 };
